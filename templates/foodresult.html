@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="/static/food.css/">
+</head>
+<body>
+    <header>
+        <h1>Diet Plan for Patients</h1>
+    </header>
+    <div class="result-container">
+        <h2>Patient Result</h2>
+        <p><strong>Patient ID:</strong> {{ result['Patient_ID'] }}</p>
+        <p><strong>Disease:</strong> {{ result['Disease'] }}</p>
+        <h2>Diet Plan</h2>
+        {% if result['Diet_Plan'] %}
+            <table class="diet-plan">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Breakfast</th>
+                        <th>Lunch</th>
+                        <th>Snacks</th>
+                        <th>Dinner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for day, meals in result['Diet_Plan'].items() %}
+                    <tr>
+                        <td>{{ day }}</td>
+                        <td>{{ meals['Breakfast'] }}</td>
+                        <td>{{ meals['Lunch'] }}</td>
+                        <td>{{ meals['Snacks'] }}</td>
+                        <td>{{ meals['Dinner'] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No diet plan available for the specified disease.<br><br><br><br>
+                They can follow their normal diet.
+            </p>
+        {% endif %}
+    </div>
+    <div class="back-button-container">
+        <a href="/"><button class="back-button">Back to Desktop 8</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information</title>
+    <link rel="stylesheet" href="/static/desktop_8.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>We Let Us Know About Your Health</h1>
+        <p class="patient-id">Patient ID: {{ result['Patient_ID'] }}</p>
+    </div>
+    <div class="content">
+        <div class="main-content">
+            <div class="text-sections">
+                <div class="section">
+                    <h2>Do's</h2>
+                    <ul class="points">
+                        {% for do in result['Do\'s'] %}
+                        <li>{{ do }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="section">
+                    <h2>Don'ts</h2>
+                        <ul class="points">
+                            {% for dont in result['Don\'ts'] %}
+                            <li>{{ dont }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="future-appointments">
+                        <p><strong class="label">Future Appointments: </strong><span class="value">{{ 'Yes' if result['Has_Future_Appointments'] else 'No' }}</span></p>
+                        <p><strong class="label">Current Insurance:</strong> <span class="value">{{ result['Current_Insurance'] }}</span></p>
+                        <p><strong class="label">Suggested Health Insurance Resources:</strong></p>
+                        <ul>
+                            {% for insurance in result['Insurance_Suggestions'] %}
+                            <li><a href="{{ insurance.split(': ')[1] }}" target="_blank" class="value">{{ insurance.split(': ')[0] }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="actions-container">
+                    <img src="/static/binder_5004363.png" alt="Image description" class="actions-image">
+                    <div class="actions-buttons">
+                   <a href="/whatsapp/"><button class="whatsapp-button">Send To My Phone</button></a>
+                   </div>
+                    <div class="actions-buttons">
+                   <a href="/index"><button class="whatsap-button">View Diet Chart</button></a>
+                   </div>
+                   </div>
+      </div>
+    <div class="back-button-container">
+            <a href="/desktop_4"><button class="back-button">Back</button></a>
+        </div>
+  </body>    

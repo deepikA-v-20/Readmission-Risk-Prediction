@@ -1,0 +1,197 @@
+/* Reset box-sizing, margin, and padding for all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure body and html take full height and prevent horizontal overflow */
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Style the body */
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #d4f1f9;
+    padding: 20px;
+    overflow-y: auto; /* Allows vertical scrolling */
+}
+
+/* Style the header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f326a;
+    color: white;
+    padding: 30px 20px;
+    position: fixed; /* Fixes the header to the top */
+    top: 0;
+    left: 0;
+    width: 100%; /*Adjust width to account for padding*/
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+/* Style the header title */
+.header h1 {
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+/* Style the patient ID */
+.patient-id {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+/* Style the content area */
+.content {
+    padding: 80px 20px 20px; /* Padding adjusted for fixed header */
+    margin-top: 60px; /* Ensures content is below the header */
+}
+
+/* Main content styles */
+.main-content {
+    display: flex;
+    justify-content: space-between; /* Align text sections and actions side by side */
+}
+
+/* Text sections styles */
+.text-sections {
+    width: 75%;
+    margin-left: 50px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    font-size: 30px;
+    color: #1f326a;
+    margin-bottom: 10px;
+}
+
+/* Points list styles */
+.points {
+    margin-left: 20px;
+    font-size: 30px;
+    list-style-type: disc;
+    color: #233873;
+}
+/* Future appointments styles */
+.future-appointments p {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #233873;
+}
+
+/* Label and value styles */
+.label {
+    color: #233873; /* Color for labels */
+}
+
+.value {
+    color: #233873; /* Color for values */
+}
+
+/* Suggested health insurance styles */
+.future-appointments ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 30px;
+}
+
+.future-appointments ul a {
+    color: #1613b1; /* Color for suggested insurance links */
+    text-decoration: none;
+}
+
+.future-appointments ul a:hover {
+    text-decoration: underline;
+}
+
+/* Actions container styles */
+.actions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actions-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    width:50%;
+    margin-right:80px;
+}
+
+.actions-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.report-button, .whatsapp-button, .whatsap-button {
+    background-color: #1f326a;
+    color: white;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-right: 60px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-button {
+    background-color: #1f326a;
+    color: white;
+    margin-top: 30px;
+    /* border: 10px solid #1f326a; */
+}
+.whatsap-button {
+    background-color: #1f326a;
+    color: white;
+    margin-top: -25px;
+}
+.whatsapp-button:hover {
+    background-color: #ffffff;
+    color:black;
+}
+.whatsap-button:hover{
+    background-color: #ffffff;
+    color:black;
+}
+.report-button:hover {
+    background-color: #ffffff;
+    color:black;
+}
+.back-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    background-color: #032243;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from the link */
+    display: inline-block;
+    margin-right: 171vb;
+    margin-top: 10px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}

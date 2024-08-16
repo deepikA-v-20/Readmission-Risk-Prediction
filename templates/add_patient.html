@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <title>Add Patient</title>
+    <link rel="stylesheet" href="/static/add_patient.css">
+</head>
+<body>
+    <div class="header">
+        <h1>ADD PATIENTS</h1>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".csv">
+                <button type="submit">Upload</button>
+            </form>
+            <!-- Flash messages container -->
+            <div class="flashes">
+                 {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul>
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %} 
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="/static/image2.jpg" alt="Descriptive Image">
+        </div>
+    </div>
+</body>
+</html>
