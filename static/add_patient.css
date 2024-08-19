@@ -1,0 +1,123 @@
+body {
+  background-color:  #9F9FE0; 
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  color: white; 
+  overflow: hidden;
+  
+}
+
+.header {
+  width: 100%;
+  background-color: #18224A; 
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  top: 0;
+  height: 10vh;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: white; 
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  flex-grow: 1;
+}
+
+.form-container {
+  text-align: center;
+  flex-grow: 1;
+}
+
+form input[type="file"] {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 25px; 
+  background-color: #18224A; 
+  border: 1px solid #ECF0F1; 
+  color: white;
+}
+
+button {
+  background-color: #a8ffff; 
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 30px; 
+  transition: background-color 0.3s;
+  font-family: 'Outfit', sans-serif;
+  margin-top: 25px;
+  width: 40%;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #85dddd; 
+}
+
+.flashes {
+  list-style-type: none;
+  padding: 0;
+}
+
+.flashes li {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.flashes li.success {
+  background-color: #27AE60;
+  color: white;
+}
+
+.flashes li.error {
+  background-color: #E74C3C;
+  color: white;
+}
+
+.image-container {
+  flex-grow: 1;
+  text-align: center;
+  margin-left: 150px;
+}
+
+.image-container img {
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.back-link {
+  position: absolute;
+  top: 50px;
+  left: 20px; /* Adjust as needed for the left margin */
+  padding: 10px 20px;
+  background-color: #9F9FE0;
+  color: rgb(13, 13, 13);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #b09af0;
+}

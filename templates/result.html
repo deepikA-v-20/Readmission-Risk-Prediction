@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediction Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Prediction Results</h1>
+        <p>Patient ID: {{ result.Patient_ID }}</p>
+    </div>
+
+    <div class="container">
+        <div class="left-side">
+            <div class="square-1"></div>
+            <div class="square-2"></div>
+        </div>
+        <div class="result-box">
+            <p>Predicted Readmission: {{ result.Predicted_Readmission }}</p>
+            <p>Readmission Probability: {{ result.Readmission_Probability | round(2) }}</p>
+
+            <h2>Risk Causes:</h2>
+            <ul>
+                {% if result.Predicted_Readmission == 'No' %}
+                    <li>No risk causes identified.</li>
+                {% elif result.Risk_Causes %}
+                    {% for cause in result.Risk_Causes %}
+                        <li>
+                            <span class="tooltip">{{ cause }}
+                                <span class="tooltiptext">
+                                    {% if cause == "High Number of Past Hospital Admissions" %}
+                                        The patient has been admitted to the hospital multiple times in the past, indicating a higher risk of readmission.
+                                    {% elif cause == "High Number of Emergency Department Visits" %}
+                                        The patient has frequently visited the emergency department, which may indicate an underlying health issue requiring closer monitoring.
+                                    {% elif cause == "High Charlson Comorbidity Index" %}
+                                    The Charlson Comorbidity Index (CCI) is a index used to predict a patient's mortality risk by assigning a weighted score to various comorbid conditions.
+                                        {% if result.get('Charlson_Comorbidity_Index') %}
+                                            <br>Charlson Comorbidity Index Value: {{ result.get('Charlson_Comorbidity_Index') }}
+                                        {% endif %}
+                                    {% elif cause == "High Number of Medications" %}
+                                        A higher number of medications can indicate a more complex health situation, increasing the risk of interactions and complications.
+                                    {% elif cause == "Extended Length of Stay" %}
+                                        An extended hospital stay can increase the risk of complications, including infections and other hospital-acquired conditions.
+                                    {% elif cause == "Cancer Diagnosis" %}
+                                        The patient has been diagnosed with cancer, which can complicate treatment and increase the risk of readmission.
+                                    {% elif cause == "Renal Failure Diagnosis" %}
+                                        Renal failure indicates a significant decline in kidney function, which can lead to multiple complications.
+                                    {% elif cause == "Electrolyte Disorder Diagnosis" %}
+                                        Electrolyte disorders can cause various symptoms and complications, potentially requiring closer monitoring.
+                                    {% elif cause == "Deficiency Anemia Diagnosis" %}
+                                        Deficiency anemia can lead to fatigue, weakness, and other complications, increasing the risk of readmission.
+                                    {% else %}
+                                        Explanation not available.
+                                    {% endif %}
+                                </span>
+                            </span>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <li>No specific risk causes identified.</li>
+                {% endif %}
+            </ul>
+
+            <a href="/" class="back-link">Back</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tooltips = document.querySelectorAll('.tooltip');
+
+            tooltips.forEach(function(tooltip) {
+                tooltip.addEventListener('mouseover', function() {
+                    const tooltipText = tooltip.querySelector('.tooltiptext');
+                    tooltipText.style.visibility = 'visible';
+                    tooltipText.style.opacity = '1';
+                });
+
+                tooltip.addEventListener('mouseout', function() {
+                    const tooltipText = tooltip.querySelector('.tooltiptext');
+                    tooltipText.style.visibility = 'hidden';
+                    tooltipText.style.opacity = '0';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

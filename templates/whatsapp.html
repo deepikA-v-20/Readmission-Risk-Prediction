@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/whatsapp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <title>Patient Report</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1><strong>Get Your Personalized Health Insights</strong></h1>
+    </div>
+    <form id="reportForm">
+        <label for="patient_id"><strong>Patient ID</strong></label>
+        <input type="text" id="patient_id" name="patient_id" required>
+        <br>
+        <label for="phone_number"><strong>Phone Number</strong></label>
+        <input type="tel" id="phone_number" name="phone_number" required>
+        <br>
+        <button type="submit"><strong>Generate Report</strong></button>
+    </form>
+
+    <div id="reportContainer" style="display: none;">
+        <h2>Patient Report</h2>
+        <iframe id="reportFrame" width="600" height="1200"></iframe>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#reportForm').on('submit', function(event){
+                event.preventDefault();
+                var patient_id = $('#patient_id').val();
+                var phone_number = $('#phone_number').val();
+                
+                $.ajax({
+                    url: '/generate_report',
+                    type: 'POST',
+                    data: {patient_id: patient_id, phone_number: phone_number},
+                    success: function(response){
+                        if (response.pdf_url) {
+                            $('#reportContainer').show();
+                            $('#reportFrame').attr('src', '/view_report/' + response.pdf_url);
+                            alert('The report has been sent to your phone number.');
+                        }
+                    },
+                    error: function(xhr, status, error){
+                        alert('Error: ' + xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guidelines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/desktop_1.css" />
+    <style>
+      .guidelines {
+        font-family: 'Outfit', sans-serif;
+        padding: 20px;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .guidelines h1, .guidelines h2 {
+        color: #003366;
+      }
+      .guidelines ul {
+        list-style-type: square;
+        margin: 20px 0;
+        padding: 0 20px;
+      }
+      .guidelines .content {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .guidelines .back-link {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #003366;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="guidelines">
+      <div class="content">
+        <h1>Guidelines for Using the Website</h1>
+        <h2>For Admins:</h2>
+        <ul>
+          <li>Log in to the admin panel using your credentials.</li>
+          <li>Once logged in, you'll be directed to the admin desk page.</li>
+          <li>Click the "Upload Patient Data" button to upload CSV files.</li>
+          <li>The data will be automatically saved to Firebase.</li>
+          <li>The CSV file should include the following mandatory columns:</li>
+          <ul>
+            <li>Number Past ED Visits Total</li>
+            <li>Treatment type</li>
+            <li>On Corticosteroids Total</li>
+            <li>Charlson Comorbidity Index</li>
+            <li>Renal Failure</li>
+            <li>Number Past Hospital Admissions</li>
+            <li>Number Medications</li>
+            <li>Age</li>
+            <li>Current Length of stay Groups</li>
+            <li>Residence after discharge</li>
+          </ul>
+          <li>The data will be automatically saved to Firebase.</li>
+        </ul>
+
+        <h2>For Doctors:</h2>
+        <ul>
+          <li>Log in using your doctor credentials.</li>
+          <li>You'll see two buttons: "Overall Risk" and "Patient Risk."</li>
+          <li>Click "Overall Risk" to view high and low-risk charts for patients and also the top ten high and low risk patients.</li>
+          <li>Click "Patient Risk" to predict the readmission of the patient , risk probability and the risk causes for individual patients.</li>
+        </ul>
+
+        <h2>For Patients:</h2>
+        <ul>
+          <li>Log in using your patient ID and password (which must include at least 1 uppercase letter, 1 lowercase letter, 1 special character, and be at least 8 characters long).</li>
+          <li>After logging in, you will see Do's and Dont's , hyperlink for insurance if there is no insurance for the patients , and about the future appointments.</li>
+          <li>You can check out your report by entering your patient ID and phone number. The report will be sent to your phone via SMS and previewed on the page and you can download.</li>
+        </ul>
+
+        <a href="/" class="back-link">Back to Home</a>
+      </div>
+    </div>
+  </body>
+</html>
