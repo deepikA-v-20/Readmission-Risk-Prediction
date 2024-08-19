@@ -1,5 +1,0 @@
-Age,Residence_before_admission,Admission_type,Referring_party,Treatment_type,Insurance,Discharge_decision,Residence_after_discharge,Care_after_discharge,Case_Mix_Effective,Current_LOS_Groups,Number_Past_Hospital_Admissions,Number_Past_ED_Visits_Subsequent_HospitalStay,Number_Past_ED_AmbulantVisits,Number_Past_ED_Visits_Total,Future_Scheduled_Appointments,Ten_Days_LOS_Prior_Stay,Dx_Cancer,Dx_Electrolyte_Disorder,Dx_Deficiency_Anemia,Dx_Renal_Failure,Dx_Drug_Abuse,Hemoglobin_Low_Total,Calcium_Low_Total,BUN_High_Total,Creatinine_High_Total,PO4_Tested_Total,INR_High_TOTAL,On_Anticoagulants_Total,On_NSAIDS_Total,On_Corticosteroids_Total,On_Corticosteroids_Total_Mild,On_Antipsychotics_Total,On_Ulcer_Medications_Total,Number_Medications,Imaging_Orders,ECG_Order,Restraining_Order,Charlson_Comorbidity_Index
-47.0,1,1,2,3,1,1,1,2,0.26,2.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,8,1,1,0,0
-97.0,3,1,2,3,1,1,2,4,1.644,7.5,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,1,1,45,1,1,0,0
-17.0,1,2,3,3,1,1,1,2,7.604,87.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,13,0,1,0,0
-22.0,3,1,2,3,1,1,2,4,0.965,2.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,8,0,0,0,0
